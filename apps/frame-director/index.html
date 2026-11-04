@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#23231f" />
+    <title>24帧导演 · 原创叙事剪辑拼图</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="logic.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="phone">
+      <header><span>独立电影练习室</span><span>NO CAMERA NEEDED</span></header>
+      <section class="hero">
+        <p class="eyebrow">故事不只发生在镜头里</p>
+        <h1>
+          <b>24</b>帧<br /><span
+            >导演<span class="asterisk" aria-hidden="true">✳</span></span
+          >
+        </h1>
+        <p>同样的画面，不同的顺序。<br />把因果接好，让一个小故事成立。</p>
+      </section>
+      <nav id="episodes" class="episodes" aria-label="选择剧本"></nav>
+      <section class="brief">
+        <span id="genre" class="eyebrow"></span>
+        <h2 id="episode-title"></h2>
+        <p id="brief"></p>
+      </section>
+      <section class="screen-section">
+        <div class="screen-top">
+          <span id="preview-label">监视器 / 准备试映</span
+          ><button id="preview">▶ 连续试映</button>
+        </div>
+        <div class="screen" id="screen" aria-live="polite">
+          <div class="screen-art" id="screen-art"></div>
+          <div class="frame-corner top-left"></div>
+          <div class="frame-corner bottom-right"></div>
+          <span class="screen-counter" id="screen-counter"></span>
+          <h3 id="screen-title"></h3>
+          <p id="screen-text"></p>
+        </div>
+        <div class="playback-progress">
+          <span id="playback-progress"></span>
+        </div>
+      </section>
+      <section class="edit">
+        <div class="section-heading">
+          <h2>你的剪辑台</h2>
+          <span>点两张交换 / 箭头移动</span>
+        </div>
+        <ol id="shots" class="shots"></ol>
+        <div class="edit-actions">
+          <button id="reset">↻ 重置剪辑</button
+          ><button id="submit">完成，检查叙事 →</button>
+        </div>
+      </section>
+      <section id="feedback" class="feedback" hidden></section>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <footer>
+        不必拥有摄影机，也可以练习讲故事。<span
+          >4 个原创剧本 · 接受所有满足因果的剪辑</span
+        >
+      </footer>
+    </main>
+    <dialog id="reset-dialog">
+      <h2>重新剪这一卷？</h2>
+      <p>当前镜头顺序会重置，完成记录会保留。</p>
+      <div>
+        <button id="cancel-reset">保留剪辑</button
+        ><button id="confirm-reset">重新开始</button>
+      </div>
+    </dialog>
+  </body>
+</html>

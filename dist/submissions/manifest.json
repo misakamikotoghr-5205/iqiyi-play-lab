@@ -1,0 +1,58 @@
+[
+  {
+    "id": "rain-alley",
+    "file": "rain-alley.zip",
+    "bytes": 24759,
+    "sha256": "3879bdace47e81383ed59de55dfa5082822959ef4fd1c288ce215f4a1d961b9f",
+    "entries": [
+      "app.js",
+      "index.html",
+      "logic.js",
+      "style.css",
+      "LICENSE.txt"
+    ],
+    "submitted": false
+  },
+  {
+    "id": "cat-dispatch",
+    "file": "cat-dispatch.zip",
+    "bytes": 26590,
+    "sha256": "26559e90c1932b62ff45131da0fe881316cc5f3a655d6d4d0d0fe39cd7c189b9",
+    "entries": [
+      "app.js",
+      "index.html",
+      "logic.js",
+      "style.css",
+      "LICENSE.txt"
+    ],
+    "submitted": false
+  },
+  {
+    "id": "frame-director",
+    "file": "frame-director.zip",
+    "bytes": 29581,
+    "sha256": "605dbd5bcac540350b35fdd9904b9387a02b28254909eb1f2396e916b0a306c9",
+    "entries": [
+      "app.js",
+      "index.html",
+      "logic.js",
+      "style.css",
+      "LICENSE.txt"
+    ],
+    "submitted": false
+  },
+  {
+    "id": "echo-rhythm",
+    "file": "echo-rhythm.zip",
+    "bytes": 28106,
+    "sha256": "b596b4dad67c5f1f6d194d366b70d0b116d37e910421708e9f2818bb95cb9b29",
+    "entries": [
+      "app.js",
+      "index.html",
+      "logic.js",
+      "style.css",
+      "LICENSE.txt"
+    ],
+    "submitted": false
+  }
+]

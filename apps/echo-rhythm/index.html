@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#1c1e35" />
+    <title>回声节拍 · 离线节奏游戏</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="logic.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="phone">
+      <header>
+        <span>ECHO / 离线节奏实验室</span
+        ><button id="sound" aria-pressed="false">声音：关 ♫</button>
+      </header>
+      <section class="hero">
+        <p class="eyebrow">跟着光，也跟着你自己</p>
+        <h1>
+          回声<span>节拍<i aria-hidden="true">✴</i></span>
+        </h1>
+        <p>不需要耳机，不需要网络。<br />光点碰到判定线时，轻敲一下。</p>
+      </section>
+      <nav id="charts" class="charts" aria-label="选择节拍曲目"></nav>
+      <section class="game-panel">
+        <div class="song-info">
+          <div>
+            <span class="eyebrow" id="difficulty"></span>
+            <h2 id="song-title"></h2>
+            <p id="song-subtitle"></p>
+          </div>
+          <span id="bpm" class="bpm"></span>
+        </div>
+        <div class="scorebar">
+          <span>连击<b id="combo">0</b></span
+          ><span>得分<b id="score">0</b></span
+          ><span>最高连击<b id="max-combo">0</b></span>
+        </div>
+        <div class="lane" id="lane" aria-label="节奏光点轨道">
+          <div class="lane-grid" aria-hidden="true"></div>
+          <div class="lane-center" aria-hidden="true"></div>
+          <div id="notes" class="notes" aria-hidden="true"></div>
+          <div class="hit-line" aria-hidden="true">
+            <i></i><span>在这里，轻敲</span><i></i>
+          </div>
+          <div id="judgment" class="judgment" role="status" aria-live="polite">
+            准备好了吗
+          </div>
+          <div id="countdown" class="countdown" aria-hidden="true"></div>
+          <span class="lane-label" aria-hidden="true"
+            >LET THE ECHO COME TO YOU</span
+          >
+        </div>
+        <div
+          class="song-progress"
+          role="progressbar"
+          aria-label="曲目进度"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <span id="progress"></span>
+        </div>
+        <button id="tap" class="tap-button" type="button" disabled>
+          <span>轻 敲</span><small>点击 / 空格 / ENTER</small>
+        </button>
+        <div class="game-controls">
+          <button id="start">开始演奏 →</button
+          ><button id="pause" disabled>Ⅱ 暂停</button
+          ><button id="restart" disabled>↻ 重来</button>
+        </div>
+        <p class="instruction">
+          提前或延后 65ms 内为「完美」，180ms 内都能接住。<br />声音为本地合成提示音；静音模式同样完整可玩。
+        </p>
+      </section>
+      <section id="result" class="result" hidden></section>
+      <div class="best-record" id="best-record"></div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <footer>
+        节奏不是赶路，是找到自己的落点。<span
+          >3 份原创节拍谱 / 不读取麦克风</span
+        >
+      </footer>
+    </main>
+  </body>
+</html>

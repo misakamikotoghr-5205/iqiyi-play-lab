@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#19232c" />
+    <title>雨巷来信 · 原创分支推理</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="logic.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="phone">
+      <header>
+        <span>雾港故事集 / 01</span
+        ><button id="restart" aria-label="重新开始故事">重新来过 ↻</button>
+      </header>
+      <section class="hero">
+        <span class="issue">一场雨，三种真相</span>
+        <h1>雨巷<span>来信</span></h1>
+        <p>母带失踪的那个晚上，<br />每个人都记错了一点时间。</p>
+        <div class="rain-scene" aria-hidden="true">
+          <div class="moon"></div>
+          <div class="house one"></div>
+          <div class="house two"></div>
+          <div class="house three"></div>
+          <div class="wire"></div>
+          <div class="umbrella">☂</div>
+          <div class="puddle"></div>
+        </div>
+      </section>
+      <div class="case-strip">
+        <span>距天亮 <b id="time">6</b> 时段</span
+        ><span id="clue-count">线索 0 / 5</span>
+      </div>
+      <section class="letter">
+        <span class="overline">匿名信 / 23:10</span>
+        <p>
+          「母带不见了。我看见红伞在东门钟指向
+          <b>19:40</b> 时离开。请在剧院开门前，找回那段声音。」
+        </p>
+        <small
+          >你是雾港的档案调查员。走访地点，校准证词，再决定相信什么。<br />原创虚构故事
+          · 完全离线 · 阅读不计时</small
+        >
+      </section>
+      <section id="investigation">
+        <div class="section-heading">
+          <h2>沿着雨声走</h2>
+          <span>每个地点只能消耗一次时间</span>
+        </div>
+        <div id="places" class="places"></div>
+        <section class="notebook">
+          <div class="section-heading">
+            <h2>调查手记</h2>
+            <span id="notebook-label">尚无记录</span>
+          </div>
+          <ul id="notebook"></ul>
+        </section>
+        <section class="deduction">
+          <h2>把答案写进回信</h2>
+          <p>至少收集两条线索。时间用尽也可以结案；完整证据决定你的结局。</p>
+          <div id="choices"></div>
+        </section>
+      </section>
+      <section id="ending" class="ending" hidden></section>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <footer>
+        不凭伞的颜色判断一个人。<span>原创互动短篇 · 适合竖屏</span>
+      </footer>
+    </main>
+    <dialog id="scene" aria-labelledby="scene-title">
+      <div class="dialog-top">
+        <span>雨巷走访记录</span
+        ><button id="close-scene" aria-label="关闭走访记录">×</button>
+      </div>
+      <h2 id="scene-title"></h2>
+      <p id="scene-text"></p>
+      <div id="scene-clue"></div>
+      <button class="primary" id="scene-done">记入手记，继续调查 →</button>
+    </dialog>
+    <dialog id="restart-dialog">
+      <h2>重写这封来信？</h2>
+      <p>当前调查进度将被新的故事替换。</p>
+      <div class="dialog-actions">
+        <button id="cancel-restart">继续调查</button
+        ><button class="primary" id="confirm-restart">重新开始</button>
+      </div>
+    </dialog>
+  </body>
+</html>

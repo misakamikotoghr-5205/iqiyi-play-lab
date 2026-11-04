@@ -1,0 +1,16 @@
+{
+  "name": "iqiyi-play-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Four original, portrait-first offline interactive apps for an iQiyi AI contest preparation pack.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,581 @@
+:root {
+  color-scheme: light;
+  --bg: #f1eee5;
+  --ink: #333a31;
+  --muted: #84877b;
+  --line: #d6d6c8;
+  --accent: #63734d;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    14px/1.75 system-ui,
+    -apple-system,
+    "Microsoft YaHei",
+    sans-serif;
+}
+a {
+  color: inherit;
+}
+a:focus-visible {
+  outline: 3px solid #8a9d6b;
+  outline-offset: 5px;
+}
+main {
+  max-width: 1220px;
+  margin: auto;
+  padding: 0 60px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 90px;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #73815c;
+  font-size: 28px;
+}
+.brand span {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+header > span {
+  font: 9px monospace;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 60px 0 43px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #858c73;
+  margin: 0;
+}
+h1 {
+  font:
+    400 59px/1.25 Georgia,
+    "Songti SC",
+    SimSun,
+    serif;
+  letter-spacing: -1px;
+  margin: 19px 0 22px;
+}
+h1 em {
+  font-style: normal;
+  color: #78885d;
+}
+.intro {
+  font-size: 12px;
+  color: #868779;
+  line-height: 2;
+  margin: 0;
+}
+.hero-stamp {
+  position: relative;
+  text-align: center;
+  border: 1px solid #b2b99c;
+  border-radius: 50%;
+  width: 194px;
+  height: 194px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #84936a;
+  transform: rotate(9deg);
+  margin-right: 34px;
+}
+.hero-stamp:before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px dashed #c4cab6;
+  border-radius: 50%;
+}
+.hero-stamp b {
+  font:
+    69px/1 Georgia,
+    serif;
+  letter-spacing: -6px;
+  margin-left: -4px;
+}
+.hero-stamp span {
+  font: 8px/1.7 monospace;
+  letter-spacing: 1.3px;
+  margin-top: 9px;
+}
+.hero-stamp i {
+  position: absolute;
+  top: -11px;
+  right: 16px;
+  background: var(--bg);
+  font-size: 36px;
+  line-height: 1;
+  font-style: normal;
+}
+.principles {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 21px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 9px;
+  color: #8a8e7d;
+  letter-spacing: 0.7px;
+  margin-bottom: 36px;
+}
+.apps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 27px;
+}
+.app-card {
+  border: 1px solid #d4d5c6;
+  border-radius: 6px;
+  background: #f7f5ed;
+  overflow: hidden;
+}
+.card-visual {
+  height: 267px;
+  position: relative;
+  padding: 22px 25px;
+  overflow: hidden;
+}
+.card-index {
+  font: 8px monospace;
+  letter-spacing: 1.6px;
+  opacity: 0.7;
+}
+.visual-foot {
+  position: absolute;
+  bottom: 22px;
+  left: 25px;
+  font-size: 9px;
+  letter-spacing: 1.1px;
+  opacity: 0.6;
+}
+.visual-word {
+  font-size: 47px;
+  line-height: 1.2;
+  font-weight: 700;
+  position: relative;
+  margin: 27px 0 0 40px;
+  letter-spacing: 5px;
+}
+.visual-word > span {
+  margin-left: 69px;
+}
+.visual-word i {
+  position: absolute;
+  font-style: normal;
+  right: 52px;
+  top: 7px;
+  font-weight: 400;
+  font-size: 70px;
+  transform: rotate(-9deg);
+}
+.rain .card-visual {
+  background: #1c2a33;
+  color: #d9d3c0;
+  background-image: repeating-linear-gradient(
+    105deg,
+    transparent 0 19px,
+    #a3bdc008 20px 21px,
+    transparent 22px 31px
+  );
+}
+.rain-word {
+  font-family: "Songti SC", SimSun, Georgia, serif;
+  font-weight: 400;
+}
+.rain-word i {
+  color: #b4977b;
+  right: 31px;
+  top: 15px;
+  font-size: 90px;
+}
+.cats .card-visual {
+  background: #e8dfec;
+  color: #73608c;
+}
+.cat-word > span {
+  margin-left: 42px;
+}
+.cat-word i {
+  color: #b58c5e;
+  right: 25px;
+  top: 4px;
+  font-size: 64px;
+}
+.frames .card-visual {
+  background: #292b24;
+  color: #eae3cd;
+}
+.frame-word {
+  font-size: 43px;
+  letter-spacing: 0;
+  margin-top: 20px;
+}
+.frame-word b {
+  font:
+    73px/1 Georgia,
+    serif;
+  letter-spacing: -6px;
+  margin-right: 8px;
+}
+.frame-word > span {
+  margin-left: 100px;
+}
+.frame-word i {
+  font-size: 49px;
+  color: #e1a567;
+  right: 29px;
+  top: 56px;
+}
+.rhythm .card-visual {
+  background: #23263e;
+  color: #d1bfed;
+}
+.rhythm-word i {
+  color: #d3e69d;
+  right: 27px;
+  top: 23px;
+  font-size: 65px;
+}
+.card-body {
+  padding: 24px 25px 25px;
+}
+.category {
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  color: #8b947a;
+}
+.card-body h2 {
+  font:
+    400 23px/1.5 Georgia,
+    "Songti SC",
+    SimSun,
+    serif;
+  margin: 10px 0;
+}
+.card-body p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #939386;
+  min-height: 43px;
+  margin: 0 0 23px;
+}
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 17px;
+  border-top: 1px solid #e2e0d4;
+}
+.card-actions a {
+  text-decoration: none;
+  font-size: 11px;
+  color: #697a52;
+}
+.card-actions a:hover {
+  text-decoration: underline;
+}
+.card-actions .download {
+  font-size: 9px;
+  color: #969985;
+}
+.submission-note {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 25px;
+  padding: 26px 28px;
+  background: #e6e8db;
+  border: 1px solid #d1d6c2;
+  border-radius: 4px;
+  margin-top: 36px;
+}
+.submission-note > span {
+  font-size: 12px;
+  color: #7c8a65;
+  font-family: "Songti SC", SimSun, serif;
+}
+.submission-note p {
+  font-size: 10px;
+  line-height: 1.9;
+  color: #8a927a;
+  margin: 0;
+}
+.submission-note strong {
+  font-weight: 500;
+  color: #65774e;
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 33px 0;
+  margin-top: 35px;
+  border-top: 1px solid var(--line);
+  font-size: 9px;
+  color: #969b88;
+}
+footer > span:first-child {
+  letter-spacing: 1.4px;
+}
+footer p {
+  font:
+    13px Georgia,
+    "Songti SC",
+    SimSun,
+    serif;
+  margin: 0;
+}
+footer > span:last-child {
+  font: 8px monospace;
+  letter-spacing: 1px;
+}
+@media (max-width: 900px) {
+  main {
+    padding: 0 34px;
+  }
+  .hero {
+    padding-top: 42px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  .hero-stamp {
+    margin: 0;
+    width: 164px;
+    height: 164px;
+  }
+  .hero-stamp b {
+    font-size: 59px;
+  }
+  .principles {
+    font-size: 8px;
+    gap: 12px;
+  }
+  .apps {
+    gap: 20px;
+  }
+  .card-visual {
+    height: 242px;
+    padding: 20px;
+  }
+  .visual-word {
+    font-size: 42px;
+    margin-left: 16px;
+  }
+  .visual-word i {
+    right: 9px;
+    font-size: 60px;
+  }
+  .rain-word i {
+    right: 6px;
+    font-size: 76px;
+  }
+  .frame-word b {
+    font-size: 65px;
+  }
+  .frame-word i {
+    font-size: 45px;
+    right: 0;
+  }
+  .visual-foot {
+    left: 20px;
+    font-size: 8px;
+  }
+  .card-body {
+    padding: 21px;
+  }
+  .card-body h2 {
+    font-size: 21px;
+  }
+  .card-body p {
+    font-size: 10px;
+    min-height: 57px;
+  }
+  .submission-note {
+    grid-template-columns: 150px 1fr;
+    gap: 15px;
+  }
+}
+@media (max-width: 650px) {
+  main {
+    padding: 0 20px;
+  }
+  header {
+    height: 73px;
+  }
+  .brand {
+    font-size: 25px;
+  }
+  .brand span {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  header > span {
+    font-size: 6px;
+    letter-spacing: 0.4px;
+  }
+  .hero {
+    padding: 36px 0 27px;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+  h1 {
+    font-size: 39px;
+    margin: 14px 0 17px;
+  }
+  .intro {
+    font-size: 10px;
+    line-height: 1.9;
+  }
+  .intro br {
+    display: none;
+  }
+  .hero-stamp {
+    margin-top: 27px;
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+  }
+  .hero-stamp:before {
+    inset: 5px;
+  }
+  .hero-stamp b {
+    font-size: 40px;
+    letter-spacing: -4px;
+  }
+  .hero-stamp span {
+    font-size: 5px;
+    letter-spacing: 0.3px;
+    margin-top: 4px;
+  }
+  .hero-stamp i {
+    font-size: 23px;
+    right: 5px;
+    top: -5px;
+  }
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 16px 0;
+    font-size: 8px;
+    margin-bottom: 24px;
+  }
+  .apps {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .card-visual {
+    height: 258px;
+  }
+  .visual-word {
+    font-size: 47px;
+    margin-left: 34px;
+  }
+  .visual-word i {
+    right: 38px;
+    font-size: 66px;
+  }
+  .rain-word i {
+    right: 22px;
+    font-size: 90px;
+  }
+  .frame-word b {
+    font-size: 75px;
+  }
+  .frame-word i {
+    right: 31px;
+    font-size: 51px;
+  }
+  .card-body h2 {
+    font-size: 23px;
+  }
+  .card-body p {
+    font-size: 11px;
+    min-height: 0;
+  }
+  .card-actions a {
+    font-size: 11px;
+  }
+  .card-actions .download {
+    font-size: 9px;
+  }
+  .submission-note {
+    display: block;
+    padding: 20px;
+    margin-top: 25px;
+  }
+  .submission-note > span {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .submission-note p {
+    font-size: 9px;
+  }
+  footer {
+    padding: 25px 0;
+    margin-top: 27px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer > span:last-child {
+    display: none;
+  }
+}
+@media (max-width: 360px) {
+  main {
+    padding: 0 16px;
+  }
+  h1 {
+    font-size: 34px;
+  }
+  .hero-stamp {
+    width: 83px;
+    height: 83px;
+    min-width: 83px;
+  }
+  .hero-stamp b {
+    font-size: 33px;
+  }
+  .hero-stamp span {
+    font-size: 4px;
+  }
+  .visual-word {
+    margin-left: 13px;
+  }
+  .visual-word i {
+    right: 19px;
+  }
+}

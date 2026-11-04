@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f7f1e6" />
+    <title>猫咪调度站 · 原创网格谜题</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="logic.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="phone">
+      <header>
+        <span>MEOW TRANSIT / 离线营业中</span
+        ><span class="stamp">准点回家</span>
+      </header>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">今日值班员，就是你</p>
+          <h1>猫咪<br /><span>调度站</span><i aria-hidden="true">✳</i></h1>
+        </div>
+        <div class="ticket" aria-hidden="true">
+          <span>ONE WAY</span><b>⌁</b><small>猫咪回家专线<br />NO. 024</small>
+        </div>
+      </section>
+      <p class="intro">
+        给每只猫安排一条回家的路。<br />少走一点，互相让一让。
+      </p>
+      <nav class="level-nav" id="levels" aria-label="选择关卡"></nav>
+      <section class="board-panel">
+        <div class="board-head">
+          <div>
+            <span class="eyebrow" id="level-label">第一站</span>
+            <h2 id="level-title"></h2>
+          </div>
+          <div class="moves"><b id="moves">0</b><span>移动步数</span></div>
+        </div>
+        <p id="level-note" class="level-note"></p>
+        <div class="cat-selector" id="cat-selector" aria-label="选择猫咪"></div>
+        <div
+          id="grid"
+          class="grid"
+          role="group"
+          aria-label="猫咪调度棋盘"
+        ></div>
+        <div class="legend">
+          <span>● 猫咪</span><span>⌂ 同色终点</span><span>✳ 花坛不可通行</span>
+        </div>
+        <div class="controls">
+          <button id="undo">↶ 撤回</button><button id="hint">小小提示 ✦</button
+          ><button id="reset">↻ 重置本关</button>
+        </div>
+        <div class="direction-pad" aria-label="方向控制">
+          <button data-dir="up" aria-label="向上移动">↑</button>
+          <div>
+            <button data-dir="left" aria-label="向左移动">←</button
+            ><button data-dir="down" aria-label="向下移动">↓</button
+            ><button data-dir="right" aria-label="向右移动">→</button>
+          </div>
+        </div>
+        <p class="instruction">
+          点猫咪，再点相邻空格。也可用方向键或下方方向按钮。<br />不计时 ·
+          无惩罚 · 提示由本地路径搜索产生
+        </p>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </section>
+      <section id="win" class="win" hidden></section>
+      <footer>
+        猫有自己的节奏，调度也一样。<span>4 关原创谜题 / 完全离线</span>
+      </footer>
+    </main>
+    <dialog id="reset-dialog">
+      <h2>重新安排这一班？</h2>
+      <p>当前步数会归零，已取得的通关记录会保留。</p>
+      <div>
+        <button id="cancel-reset">再想一想</button
+        ><button id="confirm-reset">重新出发 →</button>
+      </div>
+    </dialog>
+  </body>
+</html>
