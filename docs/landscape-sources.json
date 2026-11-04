@@ -1,0 +1,111 @@
+{
+  "checked_at": "2026-11-04",
+  "sources": [
+    {
+      "repo": "bemusic/bemuse",
+      "url": "https://github.com/bemusic/bemuse",
+      "default_branch": "master",
+      "commit": "4bf3e7d98a44841b323741cc403ecb7b41618ade",
+      "commit_date": "2026-10-08T16:17:37Z",
+      "api_license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdx_id": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0",
+        "node_id": "MDc6TGljZW5zZTE="
+      },
+      "files": [
+        {
+          "path": "LICENSE",
+          "permalink": "https://github.com/bemusic/bemuse/blob/4bf3e7d98a44841b323741cc403ecb7b41618ade/LICENSE",
+          "sha256": "06b332e1fa559c005a0fc8099741d88beb63d2433548c23931d2c396ca41aa72",
+          "bytes": 34527
+        },
+        {
+          "path": "README.md",
+          "permalink": "https://github.com/bemusic/bemuse/blob/4bf3e7d98a44841b323741cc403ecb7b41618ade/README.md",
+          "sha256": "23dc204d5f06b640dde7fe82ffac648c1c09485b6f4a17250f8a311544bc84ac",
+          "bytes": 7967
+        }
+      ]
+    },
+    {
+      "repo": "stepmania/stepmania",
+      "url": "https://github.com/stepmania/stepmania",
+      "default_branch": "5_1-new",
+      "commit": "825467bcd81c812b33ad684dc04dd151b2d5dec3",
+      "commit_date": "2026-08-22T03:31:23Z",
+      "api_license": null,
+      "files": [
+        {
+          "path": "README.md",
+          "permalink": "https://github.com/stepmania/stepmania/blob/825467bcd81c812b33ad684dc04dd151b2d5dec3/README.md",
+          "sha256": "65ce609188ec1fc8baa34f10be63e112020afe94f5991099c4d71b0fe8bac176",
+          "bytes": 2515
+        },
+        {
+          "path": "Docs/Licenses.txt",
+          "permalink": "https://github.com/stepmania/stepmania/blob/825467bcd81c812b33ad684dc04dd151b2d5dec3/Docs/Licenses.txt",
+          "sha256": "0ca732cdabbb62c7666eab27bb69bb02cd45580283a9d127ad44c0dd0cc74574",
+          "bytes": 8745
+        }
+      ]
+    },
+    {
+      "repo": "klembot/twinejs",
+      "url": "https://github.com/klembot/twinejs",
+      "default_branch": "develop",
+      "commit": "2c3b80144ba6f1fe9d8a4e5e11a2349ba55fc310",
+      "commit_date": "2026-10-07T01:47:02Z",
+      "api_license": {
+        "key": "gpl-3.0",
+        "name": "GNU General Public License v3.0",
+        "spdx_id": "GPL-3.0",
+        "url": "https://api.github.com/licenses/gpl-3.0",
+        "node_id": "MDc6TGljZW5zZTk="
+      },
+      "files": [
+        {
+          "path": "LICENSE",
+          "permalink": "https://github.com/klembot/twinejs/blob/2c3b80144ba6f1fe9d8a4e5e11a2349ba55fc310/LICENSE",
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+          "bytes": 35147
+        },
+        {
+          "path": "README.md",
+          "permalink": "https://github.com/klembot/twinejs/blob/2c3b80144ba6f1fe9d8a4e5e11a2349ba55fc310/README.md",
+          "sha256": "0a60ba191e62a2d0bd67c4215d1be2779ded1619507691a846254f11e9a3e19e",
+          "bytes": 2986
+        }
+      ]
+    },
+    {
+      "repo": "ctkrug/shove",
+      "url": "https://github.com/ctkrug/shove",
+      "default_branch": "main",
+      "commit": "607cc5aede104a885b7fad6ff4080a5b51f72a30",
+      "commit_date": "2026-07-02T06:14:08Z",
+      "api_license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "files": [
+        {
+          "path": "LICENSE",
+          "permalink": "https://github.com/ctkrug/shove/blob/607cc5aede104a885b7fad6ff4080a5b51f72a30/LICENSE",
+          "sha256": "06e382821b927b67c12ecbb31902a99d00bfbbc206d72a822d872d39de908e03",
+          "bytes": 1069
+        },
+        {
+          "path": "README.md",
+          "permalink": "https://github.com/ctkrug/shove/blob/607cc5aede104a885b7fad6ff4080a5b51f72a30/README.md",
+          "sha256": "ec9a66f32e26b3ae8ca5f2706a430023069bfa4a2abf5c82d5bea49efafe8974",
+          "bytes": 5826
+        }
+      ]
+    }
+  ]
+}

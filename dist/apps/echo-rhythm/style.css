@@ -513,3 +513,146 @@ footer span {
     transition: none !important;
   }
 }
+.timing-panel {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #23253e;
+  margin: 0 0 20px;
+}
+.timing-panel summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 13px 15px;
+  font-size: 9px;
+  color: #b6b0cf;
+}
+.timing-panel summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.timing-panel summary output {
+  font: 10px monospace;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.timing-body {
+  padding: 0 15px 16px;
+}
+.timing-body > p {
+  font-size: 9px;
+  line-height: 1.9;
+  color: #9197b0;
+  margin: 0 0 17px;
+}
+.offset-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #c8c2de;
+  gap: 10px;
+}
+.offset-label output {
+  color: var(--accent);
+  font-family: monospace;
+}
+#timing-offset {
+  width: 100%;
+  margin: 16px 0 4px;
+  accent-color: var(--accent);
+  min-height: 20px;
+}
+.offset-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 7px;
+  color: #79839b;
+}
+.timing-body .timing-help {
+  font-size: 8px;
+  margin: 12px 0;
+}
+.timing-actions {
+  display: flex;
+  gap: 9px;
+}
+.timing-actions button,
+.calibration-panel > button:not(#calibration-pad) {
+  border: 1px solid #646886;
+  background: none;
+  border-radius: 4px;
+  padding: 9px 12px;
+  font-size: 10px;
+  color: var(--accent);
+}
+.timing-actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.timing-actions button:first-child {
+  flex: 1;
+}
+.calibration-panel {
+  text-align: center;
+  border-top: 1px solid var(--line);
+  margin-top: 17px;
+  padding-top: 14px;
+}
+#calibration-counter {
+  font: 9px monospace;
+  color: #afb7ca;
+  min-height: 17px;
+}
+#calibration-pad {
+  width: 100%;
+  border: 1px solid #474e6c;
+  background: #1c2037;
+  border-radius: 7px;
+  padding: 18px 10px 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #a7aec8;
+}
+#calibration-pad:disabled {
+  cursor: default;
+}
+#calibration-orb {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #707a78;
+  color: var(--accent);
+  font-size: 26px;
+  margin: 0 0 14px;
+  box-shadow: 0 0 0 10px #d8e79d04;
+}
+#calibration-orb.flash {
+  background: var(--accent);
+  color: #252d2c;
+  box-shadow: 0 0 30px #d8e79d55;
+}
+#calibration-pad > span:nth-child(2) {
+  font-size: 11px;
+}
+#calibration-pad small {
+  font: 7px monospace;
+  margin-top: 5px;
+  color: #757f9b;
+}
+#calibration-status {
+  font-size: 9px;
+  line-height: 1.9;
+  color: #c0b4da;
+  min-height: 36px;
+  margin: 14px 0;
+}
+#apply-calibration {
+  background: var(--accent);
+  color: #252d2c;
+  border-color: var(--accent);
+}

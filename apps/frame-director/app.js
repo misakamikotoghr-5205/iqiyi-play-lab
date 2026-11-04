@@ -46,6 +46,7 @@
     }
   }
   function stop() {
+    $("#preview-label").textContent = "监视器 / 已暂停";
     clearTimeout(timer);
     timer = null;
     $("#preview").textContent = "▶ 连续试映";

@@ -47,11 +47,15 @@
     if (!c) throw new Error("没有这张唱片。");
     return c;
   }
-  function create(id = "roof") {
+  function create(id = "roof", options = {}) {
     const chart = chartById(id);
+    const timingOffsetMs = options.offsetMs ?? 0;
+    if (!Number.isInteger(timingOffsetMs) || Math.abs(timingOffsetMs) > 180)
+      throw new Error("判定偏移必须是 −180 至 +180 的整数毫秒。");
     return {
       version: 1,
       chartId: id,
+      timingOffsetMs,
       notes: chart.beats.map((beat) => ({
         at: LEAD_IN + (beat * 60000) / chart.bpm,
         judgment: null,
@@ -71,7 +75,10 @@
       throw new Error("时间必须向前流动。");
     let misses = 0;
     const notes = state.notes.map((note) => {
-      if (note.judgment === null && time - note.at > WINDOW) {
+      if (
+        note.judgment === null &&
+        time - (note.at + state.timingOffsetMs) > WINDOW
+      ) {
         misses++;
         return { ...note, judgment: "miss", error: null };
       }
@@ -84,7 +91,7 @@
       combo: misses ? 0 : state.combo,
       lastTime: time,
       finished:
-        time > notes[notes.length - 1].at + WINDOW &&
+        time > notes[notes.length - 1].at + state.timingOffsetMs + WINDOW &&
         notes.every((n) => n.judgment !== null),
     };
   }
@@ -92,7 +99,11 @@
     let next = advance(state, time);
     if (next.finished) return { state: next, judgment: "finished", error: 0 };
     const candidates = next.notes
-      .map((note, index) => ({ note, index, error: time - note.at }))
+      .map((note, index) => ({
+        note,
+        index,
+        error: time - (note.at + state.timingOffsetMs),
+      }))
       .filter(
         (item) => item.note.judgment === null && Math.abs(item.error) <= WINDOW,
       )
@@ -140,6 +151,50 @@
       strays: state.strays,
     };
   }
+  function median(values) {
+    const sorted = [...values].sort((a, b) => a - b),
+      middle = Math.floor(sorted.length / 2);
+    return sorted.length % 2
+      ? sorted[middle]
+      : (sorted[middle - 1] + sorted[middle]) / 2;
+  }
+  /** Estimate combined device/player timing. Reject unstable sessions instead of silently changing judgment. */
+  function analyzeCalibration(samples) {
+    if (
+      !Array.isArray(samples) ||
+      samples.length < 8 ||
+      samples.length > 64 ||
+      !samples.every(
+        (sample) => Number.isFinite(sample) && Math.abs(sample) <= 300,
+      )
+    )
+      return {
+        valid: false,
+        stable: false,
+        reason: "至少需要八次有效敲击，请再校准一轮。",
+      };
+    const center = median(samples),
+      mad = median(samples.map((sample) => Math.abs(sample - center)));
+    const retained = samples.filter(
+      (sample) => Math.abs(sample - center) <= Math.max(45, mad * 3),
+    );
+    const stable = retained.length >= 6 && mad <= 35;
+    const estimate = median(retained),
+      clamped = Math.max(-180, Math.min(180, Math.round(estimate)));
+    return {
+      valid: true,
+      stable,
+      offsetMs: clamped,
+      medianMs: Math.round(estimate),
+      spreadMs: Math.round(mad),
+      samples: samples.length,
+      retained: retained.length,
+      clamped: Math.abs(estimate) > 180,
+      reason: stable
+        ? "节拍稳定，可以选择应用这次偏移。"
+        : "敲击的离散度较大，本轮不会自动应用。请放松后重试。",
+    };
+  }
   const api = {
     charts,
     WINDOW,
@@ -149,6 +204,7 @@
     advance,
     hit,
     summary,
+    analyzeCalibration,
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.EchoLogic = api;

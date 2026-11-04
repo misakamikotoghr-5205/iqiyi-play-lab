@@ -30,8 +30,8 @@
   {
     "id": "frame-director",
     "file": "frame-director.zip",
-    "bytes": 29581,
-    "sha256": "605dbd5bcac540350b35fdd9904b9387a02b28254909eb1f2396e916b0a306c9",
+    "bytes": 29644,
+    "sha256": "8077a35ea4ddcc60756c7aeef41119199557347c84fde6c87c21ec1d8a95bce5",
     "entries": [
       "app.js",
       "index.html",
@@ -44,8 +44,8 @@
   {
     "id": "echo-rhythm",
     "file": "echo-rhythm.zip",
-    "bytes": 28106,
-    "sha256": "b596b4dad67c5f1f6d194d366b70d0b116d37e910421708e9f2818bb95cb9b29",
+    "bytes": 41318,
+    "sha256": "4033e44b875962b8a3115948443cd1b9656a2f40aa9d67477aca570d7d0421ff",
     "entries": [
       "app.js",
       "index.html",

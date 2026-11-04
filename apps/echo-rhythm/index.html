@@ -23,6 +23,48 @@
         <p>不需要耳机，不需要网络。<br />光点碰到判定线时，轻敲一下。</p>
       </section>
       <nav id="charts" class="charts" aria-label="选择节拍曲目"></nav>
+      <details class="timing-panel" id="timing-settings">
+        <summary>
+          <span>节拍校准 / 设备与敲击习惯</span
+          ><output id="offset-summary">0 ms</output>
+        </summary>
+        <div class="timing-body">
+          <p>
+            如果你总是偏早或偏晚，可以做一轮 12 拍校准：前 4 拍热身，后 8
+            拍采样。跟着光圈闪烁轻敲；启用声音时也会响起本地提示音。它估计设备与个人习惯的整体偏移，不是硬件延迟测量。
+          </p>
+          <label class="offset-label" for="timing-offset"
+            >手动判定偏移 <output id="offset-value">0 ms</output></label
+          ><input
+            id="timing-offset"
+            type="range"
+            min="-180"
+            max="180"
+            value="0"
+            step="1"
+          />
+          <div class="offset-scale">
+            <span>偏早 −180 ms</span><span>偏晚 +180 ms</span>
+          </div>
+          <p class="timing-help">
+            正值补偿较晚输入，负值补偿较早输入。只改变判定时间，光点与声音保持原节拍。设置从下一次演奏生效。
+          </p>
+          <div class="timing-actions">
+            <button id="start-calibration">开始 12 拍校准 →</button
+            ><button id="reset-offset">归零</button>
+          </div>
+          <div id="calibration-panel" class="calibration-panel" hidden>
+            <p id="calibration-counter">准备进入热身</p>
+            <button id="calibration-pad" aria-label="跟随闪烁敲击以校准节拍">
+              <span id="calibration-orb" aria-hidden="true">✦</span
+              ><span>看见闪光就轻敲</span><small>点击 / 空格 / Enter</small>
+            </button>
+            <p id="calibration-status" role="status" aria-live="polite"></p>
+            <button id="cancel-calibration">取消本轮</button
+            ><button id="apply-calibration" hidden>应用本次偏移 →</button>
+          </div>
+        </div>
+      </details>
       <section class="game-panel">
         <div class="song-info">
           <div>

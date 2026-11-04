@@ -15,6 +15,14 @@
     records = {},
     sounded = new Set(),
     lastMisses = 0;
+  const timingKey = "echo-rhythm:timing:v1";
+  let offsetMs = 0,
+    calibration = null;
+  try {
+    const savedOffset = JSON.parse(localStorage.getItem(timingKey));
+    if (Number.isInteger(savedOffset) && Math.abs(savedOffset) <= 180)
+      offsetMs = savedOffset;
+  } catch {}
   try {
     const saved = JSON.parse(localStorage.getItem(key));
     records = Object.fromEntries(
@@ -73,13 +81,127 @@
     oscillator.start(now);
     oscillator.stop(now + 0.1);
   }
+  function updateOffset(value, persist = true) {
+    offsetMs = Number(value);
+    $("#timing-offset").value = String(offsetMs);
+    const label = `${offsetMs > 0 ? "+" : ""}${offsetMs} ms`;
+    $("#offset-value").textContent = label;
+    $("#offset-summary").textContent = label;
+    if (persist) {
+      try {
+        localStorage.setItem(timingKey, JSON.stringify(offsetMs));
+      } catch {
+        $("#status").textContent = "偏移已在本页生效；浏览器无法保存设置。";
+      }
+    }
+  }
+  function startCalibration() {
+    cancelAnimationFrame(frame);
+    phase = "calibrating";
+    elapsed = 0;
+    state = G.create(chartId, { offsetMs });
+    calibration = {
+      origin: performance.now(),
+      beats: Array.from({ length: 12 }, (_, i) => 1800 + i * 650),
+      taps: new Map(),
+      sounded: new Set(),
+      result: null,
+    };
+    $("#calibration-panel").hidden = false;
+    $("#apply-calibration").hidden = true;
+    $("#cancel-calibration").hidden = false;
+    $("#calibration-pad").disabled = false;
+    $("#result").hidden = true;
+    $("#calibration-status").textContent =
+      "先跟四拍热身，再保持同样节奏敲八拍。校准不会修改成绩。";
+    renderStatic();
+    renderFrame();
+    $("#calibration-pad").focus({ preventScroll: true });
+    frame = requestAnimationFrame(updateCalibration);
+  }
+  function updateCalibration(timestamp) {
+    if (phase !== "calibrating" || !calibration) return;
+    const time = timestamp - calibration.origin;
+    const passed = calibration.beats.filter((beat) => time >= beat).length;
+    $("#calibration-counter").textContent =
+      passed === 0
+        ? `即将开始 · ${Math.max(1, Math.ceil((1800 - time) / 650))}`
+        : passed <= 4
+          ? `热身 ${passed} / 4 · 不计入结果`
+          : `采样 ${Math.min(8, passed - 4)} / 8`;
+    $("#calibration-orb").classList.toggle(
+      "flash",
+      calibration.beats.some((beat) => Math.abs(time - beat) <= 75),
+    );
+    calibration.beats.forEach((beat, index) => {
+      if (
+        !calibration.sounded.has(index) &&
+        time >= beat &&
+        time - beat < 150
+      ) {
+        calibration.sounded.add(index);
+        beep(index % 4 === 0);
+      }
+    });
+    if (time > calibration.beats.at(-1) + 350) {
+      phase = "ready";
+      const samples = [...calibration.taps]
+        .filter(([index]) => index >= 4)
+        .map(([, error]) => error);
+      calibration.result = G.analyzeCalibration(samples);
+      const result = calibration.result;
+      $("#calibration-pad").disabled = true;
+      $("#cancel-calibration").hidden = true;
+      $("#calibration-orb").classList.remove("flash");
+      $("#calibration-counter").textContent =
+        `采样结束 · ${samples.length} / 8 次有效敲击`;
+      $("#calibration-status").textContent = result.valid
+        ? `${result.reason} 建议 ${result.offsetMs > 0 ? "+" : ""}${result.offsetMs} ms；离散度 ${result.spreadMs} ms；保留 ${result.retained}/${result.samples} 次。${result.clamped ? "偏移已限制在180ms内，建议换设备或再测一次。" : ""}`
+        : result.reason;
+      $("#apply-calibration").hidden = !result.valid || !result.stable;
+      renderStatic();
+      return;
+    }
+    frame = requestAnimationFrame(updateCalibration);
+  }
+  function calibrationTap() {
+    if (phase !== "calibrating" || !calibration) return;
+    const time = performance.now() - calibration.origin;
+    const candidates = calibration.beats
+      .map((beat, index) => ({ index, error: time - beat }))
+      .filter(
+        (beat) =>
+          !calibration.taps.has(beat.index) && Math.abs(beat.error) <= 300,
+      )
+      .sort((a, b) => Math.abs(a.error) - Math.abs(b.error));
+    if (!candidates.length) {
+      $("#calibration-status").textContent =
+        "这一拍未记录。等下一次闪光，不必连续敲击。";
+      return;
+    }
+    const beat = candidates[0];
+    calibration.taps.set(beat.index, beat.error);
+    $("#calibration-status").textContent =
+      beat.index < 4
+        ? "热身已接住，继续跟随同样的节奏。"
+        : `已记录第 ${beat.index - 3} 次采样。`;
+  }
+  function cancelCalibration(message = "校准已取消，原偏移保持不变。") {
+    cancelAnimationFrame(frame);
+    calibration = null;
+    phase = "ready";
+    $("#calibration-panel").hidden = true;
+    $("#status").textContent = message;
+    renderStatic();
+    renderFrame();
+  }
   function renderStatic() {
     const chart = G.chartById(chartId);
     document.documentElement.style.setProperty("--accent", chart.color);
     $("#charts").innerHTML = G.charts
       .map(
         (c) =>
-          `<button class="chart ${c.id === chartId ? "active" : ""}" data-chart="${c.id}" aria-pressed="${c.id === chartId}" ${phase === "playing" || phase === "paused" ? "disabled" : ""}><strong>${c.title}</strong><small>${c.bpm} BPM · ${c.difficulty}</small></button>`,
+          `<button class="chart ${c.id === chartId ? "active" : ""}" data-chart="${c.id}" aria-pressed="${c.id === chartId}" ${["playing", "paused", "calibrating"].includes(phase) ? "disabled" : ""}><strong>${c.title}</strong><small>${c.bpm} BPM · ${c.difficulty}</small></button>`,
       )
       .join("");
     $("#charts")
@@ -99,19 +221,26 @@
     $("#best-record").textContent = r
       ? `本机最佳：${r.score} 分 / 最高连击 ${r.maxCombo}`
       : "第一次听见这段回声？留下你的第一份成绩吧。";
-    $("#start").disabled = phase === "playing" || phase === "paused";
+    $("#start").disabled = ["playing", "paused", "calibrating"].includes(phase);
     $("#start").textContent = phase === "done" ? "再演奏一次 →" : "开始演奏 →";
     $("#pause").disabled = !["playing", "paused"].includes(phase);
     $("#pause").textContent = phase === "paused" ? "▶ 继续" : "Ⅱ 暂停";
-    $("#restart").disabled = phase === "ready";
+    $("#restart").disabled = phase === "ready" || phase === "calibrating";
     $("#tap").disabled = phase !== "playing";
+    $("#sound").disabled = phase === "calibrating";
+    const locked = ["playing", "paused", "calibrating"].includes(phase);
+    for (const id of ["#timing-offset", "#start-calibration", "#reset-offset"])
+      $(id).disabled = locked;
   }
   function renderFrame() {
     const summary = G.summary(state);
     $("#combo").textContent = state.combo;
     $("#score").textContent = summary.score;
     $("#max-combo").textContent = state.maxCombo;
-    const last = state.notes[state.notes.length - 1].at + 220,
+    const last =
+        state.notes[state.notes.length - 1].at +
+        Math.max(0, state.timingOffsetMs) +
+        220,
       progress = Math.min(100, Math.max(0, (elapsed / last) * 100));
     $("#progress").style.width = `${progress}%`;
     $(".song-progress").setAttribute(
@@ -154,8 +283,10 @@
     else frame = requestAnimationFrame(update);
   }
   function start() {
+    $("#calibration-panel").hidden = true;
+    calibration = null;
     cancelAnimationFrame(frame);
-    state = G.create(chartId);
+    state = G.create(chartId, { offsetMs });
     elapsed = 0;
     pausedElapsed = 0;
     sounded = new Set();
@@ -173,7 +304,7 @@
   function reset() {
     cancelAnimationFrame(frame);
     phase = "ready";
-    state = G.create(chartId);
+    state = G.create(chartId, { offsetMs });
     elapsed = 0;
     sounded = new Set();
     $("#result").hidden = true;
@@ -249,20 +380,49 @@
   $("#tap").onclick = tap;
   $("#pause").onclick = pause;
   $("#restart").onclick = reset;
-  document.addEventListener("keydown", (e) => {
-    if (
-      (e.code === "Space" || e.code === "Enter") &&
-      phase === "playing" &&
-      !e.repeat
-    ) {
-      if (e.target.closest("#pause,#restart,#sound")) return;
-      e.preventDefault();
+  $("#timing-settings").addEventListener("toggle", () => {
+    if (!$("#timing-settings").open && phase === "calibrating")
+      cancelCalibration("校准已收起并取消，原偏移保持不变。");
+  });
+  $("#timing-offset").addEventListener("input", (event) =>
+    updateOffset(event.target.value),
+  );
+  $("#reset-offset").onclick = () => updateOffset(0);
+  $("#start-calibration").onclick = startCalibration;
+  $("#calibration-pad").onclick = calibrationTap;
+  $("#cancel-calibration").onclick = () => cancelCalibration();
+  $("#apply-calibration").onclick = () => {
+    if (!calibration?.result?.stable) return;
+    updateOffset(calibration.result.offsetMs);
+    $("#calibration-status").textContent =
+      `已应用 ${offsetMs > 0 ? "+" : ""}${offsetMs}ms，下一次演奏开始生效。`;
+    $("#apply-calibration").hidden = true;
+  };
+  document.addEventListener("keydown", (event) => {
+    if (!["Space", "Enter"].includes(event.code) || event.repeat) return;
+    const control = event.target.closest(
+      "a,button,input,select,textarea,summary,[contenteditable=true]",
+    );
+    if (phase === "playing" && (!control || control.id === "tap")) {
+      event.preventDefault();
       tap();
+    } else if (
+      phase === "calibrating" &&
+      (!control || control.id === "calibration-pad")
+    ) {
+      event.preventDefault();
+      calibrationTap();
     }
   });
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden && phase === "playing") pause();
+    if (!document.hidden) return;
+    if (phase === "playing") pause();
+    else if (phase === "calibrating")
+      cancelCalibration(
+        "校准因页面离开前台而取消，旧偏移保持不变。请回到前台重新测量。",
+      );
   });
+  updateOffset(offsetMs, false);
   renderStatic();
   renderFrame();
 })();
