@@ -1,0 +1,138 @@
+{
+  "reviewed_at_utc": "2026-11-06T12:08:01.063011+00:00",
+  "capture_date": "2026-11-06",
+  "capture_operator": "root",
+  "review_method": "Each of the five original JPEG-encoded captures was opened individually with view_image. Their unchanged original bytes are archived; normalized PNG upload copies have identical decoded RGB pixels.",
+  "reported_window_inner_width": 1280,
+  "reported_window_inner_height": 720,
+  "requested_viewport": {
+    "width": 390,
+    "height": 844,
+    "applied": false
+  },
+  "capture_mode": "Normal desktop viewport after fullPage capture failed",
+  "full_page_capture": false,
+  "mobile_device_or_platform_webview_validation": false,
+  "screenshots": [
+    {
+      "app": "rain-alley",
+      "file": "screenshots/rain-alley-actual.png",
+      "kind": "actual_desktop_browser_viewport_capture",
+      "width": 1265,
+      "height": 712,
+      "bytes": 155751,
+      "sha256": "90b23ae64c82ad5ca7807339b880727b238c71d5a25c8dae9e765686c13cf236",
+      "source_page": "http://127.0.0.1:4177/apps/rain-alley/index.html",
+      "visible_in_image": "标题、匿名信、剩余2时段和线索4/5；结局区只有上沿，结局名与100分不在图中。",
+      "operator_action_record": "操作者读取既有localStorage：结局为雨后的原声、100分、4条线索；本轮没有重跑完整故事。",
+      "limitations": [
+        "不证明本轮完成调查或取得100分",
+        "不显示完整结局区或完整UI"
+      ],
+      "visually_reviewed": true,
+      "format": "PNG",
+      "source_capture_file": "screenshots/originals/rain-alley-actual-capture.jpg",
+      "source_capture_format": "JPEG",
+      "source_capture_bytes": 35220,
+      "source_capture_sha256": "a92d9add88b0876150a40d6814abe2b001031db9a750b4938ed776e2f0368483",
+      "normalization": "Source capture was JPEG bytes with a .png extension. Original bytes archived unchanged; upload copy encoded as PNG with identical decoded RGB pixels. No crop, resize, text or game-state edits.",
+      "decoded_rgb_pixels_equal_source": true
+    },
+    {
+      "app": "cat-dispatch",
+      "file": "screenshots/cat-dispatch-actual.png",
+      "kind": "actual_desktop_browser_viewport_capture",
+      "width": 1265,
+      "height": 712,
+      "bytes": 135341,
+      "sha256": "5f33e26f2fbf7b1c20349afbe22cb9e766d996756b242f044fe9cf372b4f7f69",
+      "source_page": "http://127.0.0.1:4177/apps/cat-dispatch/index.html",
+      "visible_in_image": "标题、第一关信息、移动步数1及棋盘上部；棋盘下部和操作区不在画面内。",
+      "operator_action_record": "本轮将芋圆向上移动：步数0→1，位置由第5行第1列到第4行第1列。",
+      "limitations": [
+        "不显示完整棋盘或通关结果"
+      ],
+      "visually_reviewed": true,
+      "format": "PNG",
+      "source_capture_file": "screenshots/originals/cat-dispatch-actual-capture.jpg",
+      "source_capture_format": "JPEG",
+      "source_capture_bytes": 33682,
+      "source_capture_sha256": "09a9e204e2e1cb49771459ab988ba258e50b67b8123ff0bda75d5d37907be0ed",
+      "normalization": "Source capture was JPEG bytes with a .png extension. Original bytes archived unchanged; upload copy encoded as PNG with identical decoded RGB pixels. No crop, resize, text or game-state edits.",
+      "decoded_rgb_pixels_equal_source": true
+    },
+    {
+      "app": "cat-dispatch",
+      "file": "screenshots/cat-dispatch-play-actual.png",
+      "kind": "actual_desktop_browser_viewport_capture",
+      "width": 1265,
+      "height": 712,
+      "bytes": 94783,
+      "sha256": "a455e5651cf6b6c38bb3ca8e5efa529472245a71b14476d5b86bff48c3c2cb40",
+      "source_page": "http://127.0.0.1:4177/apps/cat-dispatch/index.html",
+      "visible_in_image": "棋盘下部的芋圆、橘皮，撤回/提示/重置、方向键与芋圆向前走了一步状态；棋盘顶部裁出画面。",
+      "operator_action_record": "与本轮同一次合法上移动作对应；芋圆由第5行第1列到第4行第1列，步数0→1。",
+      "limitations": [
+        "不显示完整棋盘",
+        "不证明第一关或四关已通关"
+      ],
+      "visually_reviewed": true,
+      "format": "PNG",
+      "source_capture_file": "screenshots/originals/cat-dispatch-play-actual-capture.jpg",
+      "source_capture_format": "JPEG",
+      "source_capture_bytes": 29872,
+      "source_capture_sha256": "e50182802d85b157375ace429ba9e7ea6fae7ea8106c2e85a4f54e2a64334a39",
+      "normalization": "Source capture was JPEG bytes with a .png extension. Original bytes archived unchanged; upload copy encoded as PNG with identical decoded RGB pixels. No crop, resize, text or game-state edits.",
+      "decoded_rgb_pixels_equal_source": true
+    },
+    {
+      "app": "frame-director",
+      "file": "screenshots/frame-director-actual.png",
+      "kind": "actual_desktop_browser_viewport_capture",
+      "width": 1265,
+      "height": 712,
+      "bytes": 103714,
+      "sha256": "8b2c5d669c8ff3bce5b12e2836d4059864c3b7a02c3ed3fd41066390020de4af",
+      "source_page": "http://127.0.0.1:4177/apps/frame-director/index.html",
+      "visible_in_image": "第1卷标记已成片，迟到的光介绍与第一镜监视器；标题顶部和下方剪辑台不完整。",
+      "operator_action_record": "读取既有已成片的第1卷，并点击连续试映；本轮没有重新求解全部关卡。",
+      "limitations": [
+        "静态图不证明完整连续播放",
+        "不证明本轮重新完成全部剪辑或完整UI"
+      ],
+      "visually_reviewed": true,
+      "format": "PNG",
+      "source_capture_file": "screenshots/originals/frame-director-actual-capture.jpg",
+      "source_capture_format": "JPEG",
+      "source_capture_bytes": 27596,
+      "source_capture_sha256": "86900c2f37284477768670b7da05d5d9755ead704ba6295869819891fda9ef86",
+      "normalization": "Source capture was JPEG bytes with a .png extension. Original bytes archived unchanged; upload copy encoded as PNG with identical decoded RGB pixels. No crop, resize, text or game-state edits.",
+      "decoded_rgb_pixels_equal_source": true
+    },
+    {
+      "app": "echo-rhythm",
+      "file": "screenshots/echo-rhythm-actual.png",
+      "kind": "actual_desktop_browser_viewport_capture",
+      "width": 1265,
+      "height": 712,
+      "bytes": 79357,
+      "sha256": "8cc45244d3d4b0449257605064a70fab3c8555e229afd344e68e74303b436961",
+      "source_page": "http://127.0.0.1:4177/apps/echo-rhythm/index.html",
+      "visible_in_image": "准备界面：准备好了吗、分数/连击0、开始演奏按钮可用，暂停与重来按钮禁用。",
+      "operator_action_record": "声音保持关闭；操作者本轮实际点击开始→暂停，DOM报告时间已停下且继续可用。这些操作发生过，但本PNG未呈现暂停状态。",
+      "limitations": [
+        "不能称暂停画面",
+        "不能证明本轮得分、敲击判定或音频性能"
+      ],
+      "visually_reviewed": true,
+      "format": "PNG",
+      "source_capture_file": "screenshots/originals/echo-rhythm-actual-capture.jpg",
+      "source_capture_format": "JPEG",
+      "source_capture_bytes": 24274,
+      "source_capture_sha256": "7bb66afc0ee8da27699b0b16b3146bb237bf5d2b517b5668024d7de81565d1dc",
+      "normalization": "Source capture was JPEG bytes with a .png extension. Original bytes archived unchanged; upload copy encoded as PNG with identical decoded RGB pixels. No crop, resize, text or game-state edits.",
+      "decoded_rgb_pixels_equal_source": true
+    }
+  ],
+  "image_normalization_performed": true
+}

@@ -1,8 +1,11 @@
 {
-  "checked_at_utc": "2026-11-06T09:01:06.998343+00:00",
+  "checked_at_utc": "2026-11-06T12:09:25.207959+00:00",
   "zip_count": 4,
   "zip_files_rebuilt": false,
-  "actual_screenshots_present": 0,
+  "actual_screenshots_present": 5,
+  "apps_with_actual_screenshots": 4,
+  "screenshot_manifest_hashes_and_dimensions_verified": true,
+  "screenshot_capture_scope": "Desktop normal viewport only; no full-page, mobile or platform WebView validation",
   "screenshot_provenance_note": "Presence checks cannot establish provenance. Real captures must be reviewed by the person who operates the browser; generated covers are not screenshots.",
   "apps": [
     {
@@ -13,7 +16,7 @@
       "root_entry_and_all_runtime_assets_local": true,
       "source_matches_existing_archive": true,
       "cover_variants_verified": 2,
-      "actual_screenshot_file_present": false,
+      "actual_screenshot_file_present": true,
       "short_description_characters": 45
     },
     {
@@ -24,7 +27,7 @@
       "root_entry_and_all_runtime_assets_local": true,
       "source_matches_existing_archive": true,
       "cover_variants_verified": 2,
-      "actual_screenshot_file_present": false,
+      "actual_screenshot_file_present": true,
       "short_description_characters": 44
     },
     {
@@ -35,7 +38,7 @@
       "root_entry_and_all_runtime_assets_local": true,
       "source_matches_existing_archive": true,
       "cover_variants_verified": 2,
-      "actual_screenshot_file_present": false,
+      "actual_screenshot_file_present": true,
       "short_description_characters": 45
     },
     {
@@ -46,7 +49,7 @@
       "root_entry_and_all_runtime_assets_local": true,
       "source_matches_existing_archive": true,
       "cover_variants_verified": 2,
-      "actual_screenshot_file_present": false,
+      "actual_screenshot_file_present": true,
       "short_description_characters": 47
     }
   ]
