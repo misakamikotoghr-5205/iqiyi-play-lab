@@ -1,0 +1,50 @@
+[
+  {
+    "id": "rain-alley",
+    "name": "雨巷来信",
+    "short_description": "用六个时段走访五处地点，记录独立证据，拼起雨巷里的误会。调查顺序与证据组合将导向不同结局。",
+    "description": "一封匿名信，把你带回雨中的雾港。作为档案调查员，你需要在六个时段内走访五处地点，校准证词、整理证据，再决定如何回复来信。每次走访都会留下手记；完整证据与仓促推断会导向三种不同结局。阅读不计时，可重新调查。原创虚构故事，适合竖屏触控，完全离线，不读取个人信息。",
+    "category_hint": "优先选后台实际存在的互动故事、推理解谜或最接近的类别；不预设分类ID。",
+    "zip": "../dist/submissions/rain-alley.zip",
+    "portrait_cover": "covers/rain-alley-portrait.png",
+    "landscape_cover": "covers/rain-alley-landscape.png",
+    "actual_screenshot_expected": "screenshots/rain-alley-actual.png",
+    "runtime_ai": false
+  },
+  {
+    "id": "cat-dispatch",
+    "name": "猫咪调度站",
+    "short_description": "为猫咪安排回家路线，避开花坛、互相让路。四关原创棋盘，支持撤回、触控与本地最短路径提示。",
+    "description": "今日调度员，就是你。点击猫咪，再点击相邻空格，或使用方向按钮，为每只猫安排回家的路线。花坛不可穿越，两只猫不能站在同一格，已经到站的猫也可以暂时让路。四关从双猫到三猫，支持撤回、重置和本地路径搜索提示，并记录步数与通关表现。不计时，无联网、广告或账号。",
+    "category_hint": "优先选后台实际存在的休闲益智、路径解谜或最接近的类别；不预设分类ID。",
+    "zip": "../dist/submissions/cat-dispatch.zip",
+    "portrait_cover": "covers/cat-dispatch-portrait.png",
+    "landscape_cover": "covers/cat-dispatch-landscape.png",
+    "actual_screenshot_expected": "screenshots/cat-dispatch-actual.png",
+    "runtime_ai": false
+  },
+  {
+    "id": "frame-director",
+    "name": "24帧导演",
+    "short_description": "调整原创短篇的镜头顺序，体验顺叙、倒叙、平行剪辑与因果喜剧。连续试映，再查看具体叙事反馈。",
+    "description": "不必拥有摄影机，也可以练习讲故事。四个原创短篇提供不同叙事目标：顺叙、悬念倒叙、平行剪辑与因果喜剧。点击两张镜头交换，或用箭头移动顺序；连续试映后完成剪辑，系统按明确的因果关系给出反馈，接受所有满足约束的排列，不把一种答案当成唯一的艺术标准。可重置、重剪，自动保存进度，完全离线。",
+    "category_hint": "优先选后台实际存在的创意互动、益智或最接近的类别；不将其标为真实视频剪辑/生成工具。",
+    "zip": "../dist/submissions/frame-director.zip",
+    "portrait_cover": "covers/frame-director-portrait.png",
+    "landscape_cover": "covers/frame-director-landscape.png",
+    "actual_screenshot_expected": "screenshots/frame-director-actual.png",
+    "runtime_ai": false
+  },
+  {
+    "id": "echo-rhythm",
+    "name": "回声节拍",
+    "short_description": "跟随三份原创程序谱面轻敲节拍，声音关闭也能完整游玩。支持视觉提示、节拍校准、暂停、连击与评级。",
+    "description": "光点碰到判定线时，轻敲一下。三份原创程序谱面由入门到挑战，支持点击、空格或Enter演奏，记录连击、得分与最佳成绩。声音由浏览器本地合成，也可全程使用纯视觉模式；支持手动偏移与十二拍校准、暂停、重来和切后台自动暂停。校准是设备与个人敲击习惯的整体估计，不是硬件延迟测量。不读取麦克风，不联网。",
+    "category_hint": "优先选后台实际存在的音乐节奏、休闲互动或最接近的类别；无版权歌曲或外部音源。",
+    "zip": "../dist/submissions/echo-rhythm.zip",
+    "portrait_cover": "covers/echo-rhythm-portrait.png",
+    "landscape_cover": "covers/echo-rhythm-landscape.png",
+    "actual_screenshot_expected": "screenshots/echo-rhythm-actual.png",
+    "runtime_ai": false
+  }
+]

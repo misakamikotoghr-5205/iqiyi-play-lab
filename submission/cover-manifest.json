@@ -1,0 +1,90 @@
+[
+  {
+    "app": "rain-alley",
+    "kind": "original_cover_not_screenshot",
+    "variant": "portrait",
+    "file": "covers/rain-alley-portrait.png",
+    "editable_source": "covers/rain-alley-portrait.svg",
+    "width": 720,
+    "height": 960,
+    "bytes": 56202,
+    "sha256": "8ec5c6cc89632a9de4bbda0fc2bdb43a6c0fd200e595fef807d5e88f5e0af445"
+  },
+  {
+    "app": "rain-alley",
+    "kind": "original_cover_not_screenshot",
+    "variant": "landscape",
+    "file": "covers/rain-alley-landscape.png",
+    "editable_source": "covers/rain-alley-landscape.svg",
+    "width": 1280,
+    "height": 720,
+    "bytes": 57163,
+    "sha256": "2f35d481e5d432c4c8e644862277b64cdef83faea805364d25cee8e6ebe32545"
+  },
+  {
+    "app": "cat-dispatch",
+    "kind": "original_cover_not_screenshot",
+    "variant": "portrait",
+    "file": "covers/cat-dispatch-portrait.png",
+    "editable_source": "covers/cat-dispatch-portrait.svg",
+    "width": 720,
+    "height": 960,
+    "bytes": 66531,
+    "sha256": "c995cc9d7183cc82bc5c995380dfe30f477db3e9805cd39b56cfd4cf0ccfc43c"
+  },
+  {
+    "app": "cat-dispatch",
+    "kind": "original_cover_not_screenshot",
+    "variant": "landscape",
+    "file": "covers/cat-dispatch-landscape.png",
+    "editable_source": "covers/cat-dispatch-landscape.svg",
+    "width": 1280,
+    "height": 720,
+    "bytes": 66373,
+    "sha256": "7f34f3fe671a3c4cda7f44da8f0b58d6efa716b481c6733bdf2eb9d7b6f6e114"
+  },
+  {
+    "app": "frame-director",
+    "kind": "original_cover_not_screenshot",
+    "variant": "portrait",
+    "file": "covers/frame-director-portrait.png",
+    "editable_source": "covers/frame-director-portrait.svg",
+    "width": 720,
+    "height": 960,
+    "bytes": 61950,
+    "sha256": "d1fa05b64341f77d119a2935c0c305cbcffd0862f24ec89bf5233f66e69dff3f"
+  },
+  {
+    "app": "frame-director",
+    "kind": "original_cover_not_screenshot",
+    "variant": "landscape",
+    "file": "covers/frame-director-landscape.png",
+    "editable_source": "covers/frame-director-landscape.svg",
+    "width": 1280,
+    "height": 720,
+    "bytes": 61262,
+    "sha256": "710a37c76e60bfa121ba69b10f4550999b0a83423c05614c1f91f7b5ba4b6292"
+  },
+  {
+    "app": "echo-rhythm",
+    "kind": "original_cover_not_screenshot",
+    "variant": "portrait",
+    "file": "covers/echo-rhythm-portrait.png",
+    "editable_source": "covers/echo-rhythm-portrait.svg",
+    "width": 720,
+    "height": 960,
+    "bytes": 56467,
+    "sha256": "6f37f2e4f73e14edb841d865bc0427db09406ff1933e9e690683dd7b53769b77"
+  },
+  {
+    "app": "echo-rhythm",
+    "kind": "original_cover_not_screenshot",
+    "variant": "landscape",
+    "file": "covers/echo-rhythm-landscape.png",
+    "editable_source": "covers/echo-rhythm-landscape.svg",
+    "width": 1280,
+    "height": 720,
+    "bytes": 56086,
+    "sha256": "ff6d0c01d2d92cd0a1a0e93878d52f154ca7ff1287addd44cd1d1ade749c090f"
+  }
+]

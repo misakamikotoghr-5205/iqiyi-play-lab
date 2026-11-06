@@ -1,0 +1,53 @@
+{
+  "checked_at_utc": "2026-11-06T09:01:06.998343+00:00",
+  "zip_count": 4,
+  "zip_files_rebuilt": false,
+  "actual_screenshots_present": 0,
+  "screenshot_provenance_note": "Presence checks cannot establish provenance. Real captures must be reviewed by the person who operates the browser; generated covers are not screenshots.",
+  "apps": [
+    {
+      "id": "rain-alley",
+      "zip_bytes": 24759,
+      "zip_sha256": "3879bdace47e81383ed59de55dfa5082822959ef4fd1c288ce215f4a1d961b9f",
+      "zip_crc_ok": true,
+      "root_entry_and_all_runtime_assets_local": true,
+      "source_matches_existing_archive": true,
+      "cover_variants_verified": 2,
+      "actual_screenshot_file_present": false,
+      "short_description_characters": 45
+    },
+    {
+      "id": "cat-dispatch",
+      "zip_bytes": 26590,
+      "zip_sha256": "26559e90c1932b62ff45131da0fe881316cc5f3a655d6d4d0d0fe39cd7c189b9",
+      "zip_crc_ok": true,
+      "root_entry_and_all_runtime_assets_local": true,
+      "source_matches_existing_archive": true,
+      "cover_variants_verified": 2,
+      "actual_screenshot_file_present": false,
+      "short_description_characters": 44
+    },
+    {
+      "id": "frame-director",
+      "zip_bytes": 29644,
+      "zip_sha256": "8077a35ea4ddcc60756c7aeef41119199557347c84fde6c87c21ec1d8a95bce5",
+      "zip_crc_ok": true,
+      "root_entry_and_all_runtime_assets_local": true,
+      "source_matches_existing_archive": true,
+      "cover_variants_verified": 2,
+      "actual_screenshot_file_present": false,
+      "short_description_characters": 45
+    },
+    {
+      "id": "echo-rhythm",
+      "zip_bytes": 41318,
+      "zip_sha256": "4033e44b875962b8a3115948443cd1b9656a2f40aa9d67477aca570d7d0421ff",
+      "zip_crc_ok": true,
+      "root_entry_and_all_runtime_assets_local": true,
+      "source_matches_existing_archive": true,
+      "cover_variants_verified": 2,
+      "actual_screenshot_file_present": false,
+      "short_description_characters": 47
+    }
+  ]
+}
