@@ -48,3 +48,9 @@ npm run dev
 ## 开源比较后的功能提升
 
 已比较 Bemuse、StepMania、Twine 与 Shove 的 README、许可和固定提交，承认这些玩法与校准已有成熟实现。本轮独立实现 Echo 的十二拍离线校准、异常敲击剔除、稳定性门槛、可保存的正负判定偏移及统一漏拍/结束边界；没有复制外部代码或素材。具体差异、许可边界和验证见 [docs/landscape.md](docs/landscape.md)。
+
+## Local demonstration, November 10
+
+## 本地演示材料
+
+[112秒双语静音演示](docs/media/iqiyi-local-demo.mp4)使用2026年11月6日五张真实桌面局部截图进行明确剪辑；[证据记录](docs/evidence/local-demo-20261110.json)包含成片指纹、实际解码帧和范围。截图不是手机、平台WebView、完整页面、重新通关、音频性能或官方审核上线的证明。原型运行无生成式模型调用；Codex辅助原创代码、文字、程序视觉与音色实现，代码采用MIT。本片不是连续录屏，不改变既有用户报告投稿与独立核验的区别。

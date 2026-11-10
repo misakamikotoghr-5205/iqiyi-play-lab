@@ -1,0 +1,115 @@
+{
+  "schema": "local-prepared-demo/v1",
+  "project": "iqiyi-play-lab",
+  "prepared_on": "2026-11-10",
+  "source_head_at_local_run": "936b5c2c5295b62171600b6efee2aaf8f1880f4c",
+  "scope": "Prepared local demonstration material. No new official registration, submission, deployment or review receipt is established by this file.",
+  "video": {
+    "file": "docs/media/iqiyi-local-demo.mp4",
+    "sha256": "0cd6fdabec9dba04a4e8a767235557148327c5a061588b343202433302016d50",
+    "bytes": 771160,
+    "duration_seconds": 112.0,
+    "width": 1920,
+    "height": 1080,
+    "frames_per_second": 5,
+    "codec": "H.264",
+    "pixel_format": "yuv420p",
+    "audio_streams": 0,
+    "captions": "Permanent Chinese and English text; silent"
+  },
+  "presentation": "Edited actual screenshots or actual-result evidence diagrams; not continuous screen recording",
+  "actual_decoded_sample_frames": [
+    {
+      "file": "docs/media/actual-mp4-frame-024s.png",
+      "sha256": "7d32e7553a034eb309de9e659e09565b5381ceef7420bbb9ebfc71f3dc67359d",
+      "width": 1920,
+      "height": 1080,
+      "sample_time_seconds": 24.0,
+      "decoded_frame_number": 120,
+      "origin": "Decoded from the actual final MP4; not a source card or reconstructed screenshot",
+      "scene": 2,
+      "scene_description": "雨巷来信 / Rain Alley: Anonymous letter, 4/5 clues. The ending is mostly offscreen; no 100-point result is visible. Not evidence of a fresh full playthrough."
+    },
+    {
+      "file": "docs/media/actual-mp4-frame-088s.png",
+      "sha256": "4b72517bdd83b9623b83c0480f5f9c44c01c9ea42ebcf7cc53c94cf1ddb5faeb",
+      "width": 1920,
+      "height": 1080,
+      "sample_time_seconds": 88.0,
+      "decoded_frame_number": 440,
+      "origin": "Decoded from the actual final MP4; not a source card or reconstructed screenshot",
+      "scene": 6,
+      "scene_description": "回声节拍 / Echo Rhythm: Ready screen; score and combo are zero. Start is available; pause and restart are disabled. This is not a pause, scoring or audio-latency test."
+    }
+  ],
+  "validation": {
+    "ffprobe_verified": true,
+    "full_decode_exit_code": 0,
+    "full_decode_errors": 0,
+    "scene_midpoints_decoded_and_visually_reviewed": 7,
+    "all_original_scene_cards_and_actual_decoded_midpoints_reviewed": true,
+    "all_decoded_midpoints_match_expected_card_with_mean_absolute_pixel_error_below": 8,
+    "contains_private_paths_contacts_or_account_screenshots": false
+  },
+  "actual_local_commands": [],
+  "actual_local_output_fingerprints": [],
+  "claims": {
+    "actual_desktop_screenshots": 5,
+    "capture_date": "2026-11-06",
+    "viewport_pixels": [
+      1265,
+      712
+    ],
+    "mobile_or_platform_webview_verified": false,
+    "full_page_captures": false,
+    "fresh_full_completion_claimed": false,
+    "runtime_generative_model_used": false,
+    "platform_review_or_publication_proved_by_video": false
+  },
+  "limitations": [
+    "Five actual local desktop viewport captures from 2026-11-06.",
+    "Not mobile, platform WebView, full UI, a fresh full completion, scoring/audio performance or platform-review proof.",
+    "Edited static captures, not continuous screen recording."
+  ],
+  "media_attribution": {
+    "editorial_design": "Original Pillow shapes and text generated for this video",
+    "font": "System Noto Sans CJK (SIL Open Font License 1.1); no font binary redistributed",
+    "music": "none",
+    "voice": "none",
+    "third_party_logos": "none",
+    "AI_assistance": "Codex-assisted scripts, captions and design; runtime claims follow scene labels"
+  },
+  "screenshot_sources": [
+    {
+      "file": "rain-alley-actual.png",
+      "sha256": "90b23ae64c82ad5ca7807339b880727b238c71d5a25c8dae9e765686c13cf236",
+      "operation": "Full original viewport placed at native size; no crop or UI/state replacement"
+    },
+    {
+      "file": "cat-dispatch-actual.png",
+      "sha256": "5f33e26f2fbf7b1c20349afbe22cb9e766d996756b242f044fe9cf372b4f7f69",
+      "operation": "Full original viewport placed at native size; no crop or UI/state replacement"
+    },
+    {
+      "file": "cat-dispatch-play-actual.png",
+      "sha256": "a455e5651cf6b6c38bb3ca8e5efa529472245a71b14476d5b86bff48c3c2cb40",
+      "operation": "Full original viewport placed at native size; no crop or UI/state replacement"
+    },
+    {
+      "file": "frame-director-actual.png",
+      "sha256": "8b2c5d669c8ff3bce5b12e2836d4059864c3b7a02c3ed3fd41066390020de4af",
+      "operation": "Full original viewport placed at native size; no crop or UI/state replacement"
+    },
+    {
+      "file": "echo-rhythm-actual.png",
+      "sha256": "8cc45244d3d4b0449257605064a70fab3c8555e229afd344e68e74303b436961",
+      "operation": "Full original viewport placed at native size; no crop or UI/state replacement"
+    }
+  ],
+  "main_operator_review": {
+    "actual_contact_sheet_reviewed": true,
+    "full_size_actual_frame_reviewed": 5,
+    "privacy_and_legibility_passed": true
+  },
+  "contest_platform_submission_verified_by_video": false
+}
